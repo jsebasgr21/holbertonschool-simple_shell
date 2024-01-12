@@ -6,9 +6,10 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <string.h>
-#include <unisted.h>
+#include <unistd.h>
 
 /*---PROTOTYPES---*/
-void ReadInput();
+int main();
+char *ReadInput();
 
 #endif

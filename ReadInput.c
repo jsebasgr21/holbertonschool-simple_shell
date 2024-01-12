@@ -1,9 +1,20 @@
 #include "main.h"
 /**
- * ReadInput - take the input user
+* ReadInput - read the input user
+* Return: Return the input buffer
 */
 
-void Read_Input()
+char *Read_Input()
 {
+char *input = NULL;
+size_t bufsize = 0;
 
+{
+if(getline(&input, &bufsize, stdin) == -1)
+{
+free(input);
+exit(EXIT_FAILURE);
+}
+return (input);
+}
 }
