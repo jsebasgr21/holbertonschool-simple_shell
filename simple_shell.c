@@ -6,6 +6,10 @@
 
 int main()
 {
-    while(1);
-        
+    while (1)
+    {
+    if (isatty(STDIN_FILENO) == 1)
+    printf("shelli_^-^");
+    }
+return (0);
 }

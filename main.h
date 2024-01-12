@@ -9,7 +9,6 @@
 #include <unistd.h>
 
 /*---PROTOTYPES---*/
-int main();
 char *ReadInput();
 
 #endif
