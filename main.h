@@ -9,6 +9,6 @@
 #include <unistd.h>
 
 /*---PROTOTYPES---*/
-char *ReadInput();
+int ReadInput();
 
 #endif

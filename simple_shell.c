@@ -1,15 +1,14 @@
 #include "main.h"
 /**
  * simple_shell - shell
- * return: Always 0
+ * return: return 0 if sucess
 */
 
 int main()
 {
-    while (1)
-    {
-    if (isatty(STDIN_FILENO) == 1)
-    printf("shelli_^-^");
-    }
+while (1)
+{
+ReadInput();
+}
 return (0);
 }

@@ -4,17 +4,13 @@
 * Return: Return the input buffer
 */
 
-char *Read_Input()
+int ReadInput()
 {
 char *input = NULL;
 size_t bufsize = 0;
+int size;
 
-{
-if (getline(&input, &bufsize, stdin) == -1)
-{
-free(input);
-exit(EXIT_FAILURE);
-}
-return (input);
-}
+size = getline(&input, &bufsize, stdin);
+
+return (size);
 }
