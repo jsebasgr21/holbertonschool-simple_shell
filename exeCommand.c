@@ -41,7 +41,7 @@ return (0);
 }
 if (execve(excommand, stoken, NULL) == -1)
 {
-return (1);
+status = 1;
 }
-return (0);
+return (status);
 }
