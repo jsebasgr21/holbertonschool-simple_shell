@@ -17,7 +17,6 @@ return (NULL);
 }
 
 delim = strtok(pathcpy, ":");
-
 while (delim != NULL)
 {
 rute = malloc(strlen(delim) + strlen(excommand) + 2);

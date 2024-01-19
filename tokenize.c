@@ -11,16 +11,12 @@ int tokenize(char *uinput, char *stoken[])
 char *delim = " ";
 char *token;
 int count = 0;
-char *buffercpy = strdup(uinput);
+char *buffercpy = uinput;
 
-if (buffercpy == NULL)
-{
-free(buffercpy);
-return (1);
-}
 token = strtok(buffercpy, delim);
 
-while (token)
+count = 0;
+while (token != NULL)
 {
 stoken[count++] = token;
 token = strtok(NULL, delim);

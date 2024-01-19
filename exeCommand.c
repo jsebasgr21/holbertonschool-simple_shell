@@ -26,6 +26,7 @@ pchild = fork();
 
 if (pchild == -1)
 {
+free(excommand);
 return (1);
 }
 
@@ -34,8 +35,11 @@ if (pchild != 0)
 waitpid(pchild, &status, 0);
 
 if (status != 0)
+{
+free(excommand);
 return (2);
-
+}
+free(excommand);
 return (0);
 }
 if (execve(excommand, stoken, NULL) == -1)
