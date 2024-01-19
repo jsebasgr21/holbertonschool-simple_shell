@@ -4,12 +4,11 @@
 * Return: Return the input buffer
 */
 
-int ReadInput()
+char *ReadInput()
 {
-char *uinput = NULL, *stoken[MAX_ARGS];
+char *uinput = NULL;
 size_t bufsize = 0;
 int size;
-int num;
 
 size = getline(&uinput, &bufsize, stdin);
 
@@ -17,13 +16,7 @@ if (size == -1){
 free(uinput);
 exit(0);
 }
-
 uinput[strcspn(uinput, "\n")] = '\0';
-num = tokenize(uinput, stoken);
-
-if (num > 0)
-exeCommand(stoken);
-
 free(uinput);
-return (size);
+return (uinput);
 }
