@@ -34,6 +34,11 @@ if (pchild != 0)
 {
 waitpid(pchild, &status, 0);
 
+if (WIFSIGNALED(status))
+{
+int signal_number = WTERMSIG(status);
+printf("Child process terminated by signal %d\n", signal_number);
+}
 if (status != 0)
 return (2);
 
