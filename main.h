@@ -16,7 +16,7 @@ extern char **environ;
 #define MAX_ARGS 1024
 
 /*---PROTOTYPES---*/
-char *ReadInput();
+char *readInput();
 int tokenize(char *command, char *stoken[]);
 int exeCommand(char **stoken);
 char *spath(char *excommand);

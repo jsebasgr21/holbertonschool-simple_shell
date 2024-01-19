@@ -4,7 +4,7 @@
 * Return: Return the input buffer
 */
 
-char *ReadInput()
+char *readInput()
 {
 char *uinput = NULL;
 size_t bufsize = 0;
@@ -12,11 +12,12 @@ int size;
 
 size = getline(&uinput, &bufsize, stdin);
 
-if (size == -1){
+if (size == -1)
+{
 free(uinput);
-exit(0);
+exit(1);
 }
+
 uinput[strcspn(uinput, "\n")] = '\0';
-free(uinput);
 return (uinput);
 }
