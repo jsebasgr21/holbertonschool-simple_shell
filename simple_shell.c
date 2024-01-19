@@ -18,7 +18,17 @@ printf("prompt$ ");
 }
 
 buffer = readInput();
-status = checkfunc(buffer);
+if (strcmp(buffer, "env") == 0 || strcmp(buffer, "printenv") == 0)
+{
+free(buffer);
+checkfunc();
+return (0);
+}
+if (strcmp(buffer, "exit") == 0)
+{
+free(buffer);
+break;
+} 
 stoken = tokenize(buffer, &num);
 
 
