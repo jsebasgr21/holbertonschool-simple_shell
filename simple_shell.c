@@ -18,7 +18,7 @@ printf("prompt$ ");
 }
 
 buffer = readInput();
-
+status = checkfunc(buffer);
 stoken = tokenize(buffer, &num);
 
 
