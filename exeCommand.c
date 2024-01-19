@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * exeCommand - function to execute the user commmands
- * 
+ *
 */
 
 int exeCommand(char **stoken)
@@ -18,33 +18,30 @@ if ((excommand == NULL) || stat(excommand, &st) != 0)
 fprintf(stderr, "./hsh: 1: %s: not found\n", stoken[0]);
 return (127);
 }
+
 if (excommand != stoken[0])
 {
+free(stoken[0]);
 stoken[0] = excommand;
 }
+
 pchild = fork();
 
 if (pchild == -1)
-{
-free(excommand);
 return (1);
-}
 
 if (pchild != 0)
 {
 waitpid(pchild, &status, 0);
 
 if (status != 0)
-{
-free(excommand);
 return (2);
-}
-free(excommand);
+
 return (0);
 }
+
 if (execve(excommand, stoken, NULL) == -1)
-{
 return (1);
-}
+
 return (0);
 }

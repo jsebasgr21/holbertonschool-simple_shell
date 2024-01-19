@@ -6,21 +6,37 @@
  * @stoken: store the tokens.
  * Return: return the number of tokens.
 */
-int tokenize(char *uinput, char *stoken[])
+char **tokenize(char *uinput, int *count)
 {
-char *delim = " ";
+char *delim = " \n";
 char *token;
-int count = 0;
-char *buffercpy = uinput;
+char **stoken = NULL;
+char *buffercpy = strdup(uinput);
+
+if (buffercpy == NULL)
+{
+return (NULL);
+}
+
+stoken = malloc (MAX_ARGS * sizeof(char *));
+
+if (stoken == NULL)
+{
+free(buffercpy);
+return (NULL);
+}
 
 token = strtok(buffercpy, delim);
 
-count = 0;
+*count = 0;
 while (token != NULL)
 {
-stoken[count++] = token;
+stoken[*count] = strdup(token);
+(*count)++;
 token = strtok(NULL, delim);
 }
-stoken[count++] = NULL;
-return (count);
+
+stoken[*count] = NULL;
+free(buffercpy);
+return (stoken);
 }

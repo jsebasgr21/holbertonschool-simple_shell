@@ -6,8 +6,8 @@
 
 int main()
 {
-int status = 0, num;
-char *stoken[MAX_ARGS], *buffer;
+int status = 0, num, i;
+char **stoken, *buffer;
 
 while (1)
 {
@@ -18,11 +18,18 @@ printf("prompt$ ");
 }
 
 buffer = readInput();
-num = tokenize(buffer, stoken);
+
+stoken = tokenize(buffer, &num);
+
 
 if (num > 0)
 status = exeCommand(stoken);
 
+for (i = 0; stoken[i] != NULL; i++)
+{
+free(stoken[i]);
+}
+free(stoken);
 free(buffer);
 }
 return (status);

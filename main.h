@@ -17,7 +17,7 @@ extern char **environ;
 
 /*---PROTOTYPES---*/
 char *readInput();
-int tokenize(char *command, char *stoken[]);
+char **tokenize(char *uinput, int *count);
 int exeCommand(char **stoken);
 char *spath(char *excommand);
 
