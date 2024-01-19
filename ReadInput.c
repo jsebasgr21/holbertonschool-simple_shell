@@ -15,7 +15,7 @@ size = getline(&uinput, &bufsize, stdin);
 if (size == -1)
 {
 free(uinput);
-exit(1);
+exit(0);
 }
 
 uinput[strcspn(uinput, "\n")] = '\0';

@@ -22,7 +22,8 @@ num = tokenize(buffer, stoken);
 
 if (num > 0)
 status = exeCommand(stoken);
-}
+
 free(buffer);
+}
 return (status);
 }

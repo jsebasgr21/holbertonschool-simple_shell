@@ -20,7 +20,6 @@ return (127);
 }
 if (excommand != stoken[0])
 {
-free(stoken[0]);
 stoken[0] = excommand;
 }
 pchild = fork();
@@ -41,7 +40,7 @@ return (0);
 }
 if (execve(excommand, stoken, NULL) == -1)
 {
-status = 1;
+return (1);
 }
-return (status);
+return (0);
 }
