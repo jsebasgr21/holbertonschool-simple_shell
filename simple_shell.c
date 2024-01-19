@@ -34,7 +34,6 @@ stoken = tokenize(buffer, &num);
 
 if (num > 0)
 status = exeCommand(stoken);
-
 for (i = 0; stoken[i] != NULL; i++)
 {
 free(stoken[i]);
