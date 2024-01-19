@@ -15,8 +15,8 @@ excommand = spath(stoken[0]);
 
 if ((excommand == NULL) || stat(excommand, &st) != 0)
 {
-printf("./hsh: 1: %s: not found\n", stoken[0]);
-return (127);
+fprintf(stderr, "./hsh: 1: %s: not found\n", stoken[0]);
+exit(127);
 }
 
 if (excommand != stoken[0])
