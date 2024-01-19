@@ -9,6 +9,17 @@ char *spath(char *excommand)
 char *path = getenv("PATH");
 char *pathcpy, *delim, *rute = NULL;
 
+if (path == NULL)
+{
+if (access(rute, X_OK) == 0)
+{
+return (excommand);
+}
+else
+{
+return (NULL);
+}
+}
 pathcpy = strdup(path);
 
 if (pathcpy == NULL)
