@@ -9,7 +9,7 @@ char *spath(char *excommand)
 char *path = getenv("PATH");
 char *pathcpy, *delim, *rute = NULL;
 
-if (path == NULL)
+if (path == NULL || path[0] == '\0')
 {
 if (access(rute, X_OK) == 0)
 {
