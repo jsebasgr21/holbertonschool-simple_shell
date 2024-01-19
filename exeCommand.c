@@ -18,7 +18,11 @@ if ((excommand == NULL) || stat(excommand, &st) != 0)
 fprintf(stderr, "./hsh: 1: %s: not found\n", stoken[0]);
 return (127);
 }
-
+if (excommand != stoken[0])
+{
+free(stoken[0]);
+stoken[0] = excommand;
+}
 pchild = fork();
 
 if (pchild == -1)
