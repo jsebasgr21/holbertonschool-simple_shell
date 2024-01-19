@@ -14,15 +14,8 @@ int num;
 size = getline(&uinput, &bufsize, stdin);
 
 if (size == -1){
-if (feof(stdin))
-{
 free(uinput);
 exit(0);
-}
-else
-{
-free(uinput);
-}
 }
 
 uinput[strcspn(uinput, "\n")] = '\0';
