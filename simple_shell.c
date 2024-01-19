@@ -8,7 +8,9 @@ int main()
 {
 while (1)
 {
+printf("prompt$ ");
 ReadInput();
+
 }
 return (0);
 }
