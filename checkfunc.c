@@ -8,7 +8,7 @@ int checkfunc(char *buffer)
 if (strcmp(buffer, "exit") == 0)
 {
 free(buffer);
-exit(2);
+exit(0);
 }
 
 if (strcmp(buffer, "env") == 0 || strcmp(buffer, "printenv") == 0)
