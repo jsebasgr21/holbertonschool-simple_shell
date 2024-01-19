@@ -17,12 +17,10 @@ if (size == -1){
 if (feof(stdin))
 {
 free(uinput);
-perror("EXIT_SUCCESS\n");
 exit(0);
 }
 else
 {
-perror("ERRROR TO READ INPUT");
 free(uinput);
 }
 }
