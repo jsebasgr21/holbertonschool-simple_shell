@@ -9,7 +9,7 @@ int main()
 int status = 0, num;
 char *stoken[MAX_ARGS], *buffer;
 
-while (status <= 1)
+while (1)
 {
 
 if (isatty(STDIN_FILENO) == 1)
