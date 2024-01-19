@@ -14,8 +14,10 @@ int count = 0;
 char *buffercpy = strdup(uinput);
 
 if (buffercpy == NULL)
+{
+free(buffercpy);
 return (1);
-
+}
 token = strtok(buffercpy, delim);
 
 while (token)
